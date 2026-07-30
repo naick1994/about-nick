@@ -121,7 +121,8 @@ export function RoleList({ items }: { items: RoleItem[] }) {
   const [openKey, setOpenKey] = useState<string | null>(null);
 
   return (
-    <div className="border-t border-border">
+    <div className="relative border-t border-border">
+      <div className="absolute -left-4 top-0 bottom-0 w-px bg-gradient-to-b from-primary/25 via-border to-transparent" aria-hidden="true" />
       {items.map((item, i) => {
         const key = item.title + item.org;
         return (

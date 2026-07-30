@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Briefcase, GraduationCap } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { DeployTag } from '@/components/DeployTag';
 import { WindField } from '@/components/WindField';
@@ -20,7 +20,7 @@ import logoDgm from '@/assets/logo-dgm.jpg';
 import logoBocconi from '@/assets/logo-bocconi.jpg';
 import logoNtuTaiwan from '@/assets/logo-ntu-taiwan.jpg';
 
-const ROLES: RoleItem[] = [
+const EXPERIENCE: RoleItem[] = [
   {
     title: 'Co-Founder & CEO', org: 'Flight Mode', period: 'Mar 2025 - Present · 1 yr 5 mos', logo: logoFlightMode, era: 'Tarifa',
     desc: [
@@ -29,7 +29,7 @@ const ROLES: RoleItem[] = [
     ],
   },
   {
-    title: 'Manager', org: 'Casati Brothers', period: 'Mar 2025 - Present · 1 yr 5 mos', logo: logoCasatiBrothers, logoScale: 2.1, era: 'Tarifa',
+    title: 'Manager', org: 'Casati Brothers', orgUrl: 'https://casatibrothers.com/', period: 'Mar 2025 - Present · 1 yr 5 mos', logo: logoCasatiBrothers, logoScale: 2.1, era: 'Tarifa',
     desc: [
       'Athlete representation, sponsorships, partnerships, and strategic growth.',
       'Currently managing two of the most talented riders in the world.',
@@ -43,7 +43,7 @@ const ROLES: RoleItem[] = [
     ],
   },
   {
-    title: 'Co-Founder & CEO', org: 'Ridesk', period: 'Oct 2025 - Present · 10 mos', logo: logoRidesk, era: 'Tarifa',
+    title: 'Co-Founder & CEO', org: 'Ridesk', orgUrl: 'https://www.ridesk.app/', period: 'Oct 2025 - Present · 10 mos', logo: logoRidesk, era: 'Tarifa',
     desc: [
       'Objective: simplify the watersport school industry through digital innovation.',
       'Building Ridesk, a scalable SaaS platform that helps schools manage bookings, instructors, payments, and daily operations from one all-in-one system.',
@@ -74,6 +74,9 @@ const ROLES: RoleItem[] = [
     title: 'Consultant', org: 'DGM Consulting Srl', orgUrl: 'https://dgmco.it/it/', period: 'Apr 2018 - Aug 2018 · 5 mos', logo: logoDgm, era: 'Milan',
     desc: ['Data analytics and strategic consulting in hospitality and industrial sectors.'],
   },
+];
+
+const EDUCATION: RoleItem[] = [
   {
     title: 'MSc in Management', org: 'Bocconi University', period: 'Sep 2016 - Dec 2018', logo: logoBocconi, era: 'Milan',
     desc: [
@@ -83,12 +86,12 @@ const ROLES: RoleItem[] = [
     ],
   },
   {
-    title: 'BSc', org: 'Bocconi University', period: 'Sep 2013 - Jul 2016', logo: logoBocconi, era: 'Milan',
-    desc: [],
-  },
-  {
     title: 'Exchange Program', org: 'National Taiwan University of Taipei', period: 'Aug 2016 - Dec 2018', logo: logoNtuTaiwan, era: 'Taiwan',
     desc: ['Business & culture exchange.', 'GPA 4/4.'],
+  },
+  {
+    title: 'BSc', org: 'Bocconi University', period: 'Sep 2013 - Jul 2016', logo: logoBocconi, era: 'Milan',
+    desc: [],
   },
 ];
 
@@ -200,9 +203,17 @@ export default function AboutNick() {
       </div>
 
       <div className="container mx-auto px-4 py-14 max-w-2xl">
-        <h2 className="font-bold mb-1">Roles</h2>
-        <p className="text-sm text-muted-foreground mb-6">Open any row for the detail.</p>
-        <RoleList items={ROLES} />
+        <div className="flex items-center gap-2 mb-5">
+          <Briefcase className="w-4 h-4 text-primary" />
+          <h2 className="text-xs font-mono tracking-widest uppercase text-primary">Experience</h2>
+        </div>
+        <RoleList items={EXPERIENCE} />
+
+        <div className="flex items-center gap-2 mb-5 mt-14">
+          <GraduationCap className="w-4 h-4 text-primary" />
+          <h2 className="text-xs font-mono tracking-widest uppercase text-primary">Education</h2>
+        </div>
+        <RoleList items={EDUCATION} />
 
         <div className="space-y-10 mt-16">
           <div>
