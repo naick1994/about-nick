@@ -4,7 +4,7 @@ import { ChevronDown } from 'lucide-react';
 
 export type RoleItem = {
   title: string; org: string; orgUrl?: string; period: string; desc: string[];
-  logo?: string; logoScale?: number; era: string;
+  companyDesc?: string; logo?: string; logoScale?: number; era: string;
 };
 
 function useInViewOnce<T extends HTMLElement>() {
@@ -100,6 +100,11 @@ function RoleRow({ item, index, isOpen, onToggle }: {
                 >
                   {item.orgUrl.replace(/^https?:\/\//, '')}
                 </a>
+              )}
+              {item.companyDesc && (
+                <p className="text-sm text-muted-foreground/80 italic mb-3 pb-3 border-b border-border/60">
+                  {item.companyDesc}
+                </p>
               )}
               {item.desc.length > 0 && (
                 <ul className="text-sm text-muted-foreground space-y-1.5 list-disc list-inside">

@@ -51,15 +51,18 @@ const EXPERIENCE: RoleItem[] = [
   },
   {
     title: 'Chief Operating Officer', org: 'Snowit (Founding Team)', orgUrl: 'https://snowit.ski/en', period: 'May 2019 - Feb 2025 · 5 yrs 10 mos', logo: logoSnowit, era: 'Milan',
+    companyDesc: 'GPS-based mobile application for skiers and snowboarders, designed to track and analyse on-slope performance. The app records distance travelled, elevation, number of runs, average and maximum speed, and calories burned, while allowing users to identify ski runs and visualise their routes on 3D maps. It also includes social and gamification features, such as challenges, rewards, performance comparison and social sharing.',
     desc: [
       'Scaled Snowit to 400k+ users and the team from 3 to 50+ people.',
       'Led Product, Ops, and Customer Care teams.',
       'Managed P&L and implemented agile project management tools and routines.',
       'Led development of a GPS-based ski tracking app.',
+      'Defined the new operating model and built the Operations & Product and Customer Care teams; the app holds a 4.8-star rating, credited in part to that work.',
     ],
   },
   {
     title: 'Co-Founder & Chief Operating Officer', org: 'Tribala', orgUrl: 'https://tribala.travel/en', period: 'May 2023 - Feb 2025 · 1 yr 10 mos', logo: logoTribala, era: 'Milan',
+    companyDesc: 'Sports travel platform specialising in curated group trips built around activities such as kitesurfing, skiing, padel and other outdoor sports. It combines travel services, coaching, equipment rental and local support, connecting people through communities based on shared sporting interests.',
     desc: [
       'Co-founded Tribala, taking it from the initial idea to launch and market validation.',
       'Built the brand identity and product strategy for a sports group travel marketplace.',
@@ -68,7 +71,10 @@ const EXPERIENCE: RoleItem[] = [
   },
   {
     title: 'Digital & Innovation Ambassador', org: 'FNM S.p.A.', orgUrl: 'https://www.fnmgroup.it/', period: 'Sep 2022 - Oct 2024 · 2 yrs 2 mos', logo: logoFnm, era: 'Milan',
-    desc: ['Member of Digital & Innovation Ambassadors to promote innovation within the FNM group.'],
+    companyDesc: 'Integrated mobility and infrastructure group active in public transport, railway and motorway infrastructure, renewable energy and logistics. The Group develops and manages services and infrastructure focused on sustainable, connected and innovative mobility.',
+    desc: [
+      'Member of Digital & Innovation Ambassadors to promote innovation within the FNM group.',
+    ],
   },
   {
     title: 'Consultant', org: 'DGM Consulting Srl', orgUrl: 'https://dgmco.it/it/', period: 'Apr 2018 - Aug 2018 · 5 mos', logo: logoDgm, era: 'Milan',
