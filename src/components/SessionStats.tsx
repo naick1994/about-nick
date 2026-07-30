@@ -4,10 +4,10 @@ import { AnimatedCounter } from '@/components/AnimatedCounter';
 // readout he builds for other riders, applied to himself. Distance and
 // speed (the session-level numbers) lead, then the two jump peaks.
 const SESSION_STATS = [
-  { value: 119, decimals: 0, unit: 'm', label: 'Distance' },
-  { value: 79, decimals: 0, unit: 'kmh', label: 'Speed' },
-  { value: 18.6, decimals: 1, unit: 'm', label: 'Height' },
-  { value: 9.1, decimals: 1, unit: 's', label: 'Airtime' },
+  { value: 119, decimals: 0, unit: 'm', label: 'Max distance' },
+  { value: 79, decimals: 0, unit: 'kmh', label: 'Max speed' },
+  { value: 18.6, decimals: 1, unit: 'm', label: 'Max height' },
+  { value: 9.1, decimals: 1, unit: 's', label: 'Max airtime' },
 ];
 
 export function SessionStats({ totalSessions }: { totalSessions: number }) {
@@ -23,7 +23,7 @@ export function SessionStats({ totalSessions }: { totalSessions: number }) {
       <div className="grid grid-cols-2 gap-x-6 gap-y-3">
         {SESSION_STATS.map((s) => (
           <div key={s.label} className="flex items-baseline justify-between gap-3">
-            <span className="text-[11px] text-muted-foreground">{s.label}</span>
+            <span className="text-[11px] text-muted-foreground whitespace-nowrap">{s.label}</span>
             <span className="text-lg font-bold tabular-nums whitespace-nowrap">
               <AnimatedCounter target={s.value} decimals={s.decimals} />
               <span className="text-xs text-muted-foreground font-medium ml-0.5">{s.unit}</span>
