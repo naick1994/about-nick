@@ -1,12 +1,13 @@
 import { AnimatedCounter } from '@/components/AnimatedCounter';
 
 // Real logged kite session data, not decoration — the same kind of Woo
-// readout he builds for other riders, applied to himself.
+// readout he builds for other riders, applied to himself. Distance and
+// speed (the session-level numbers) lead, then the two jump peaks.
 const SESSION_STATS = [
-  { value: 18.6, decimals: 1, unit: 'm', label: 'Highest jump' },
-  { value: 9.1, decimals: 1, unit: 's', label: 'Max airtime' },
-  { value: 119, decimals: 0, unit: 'm', label: 'Max distance' },
-  { value: 79, decimals: 0, unit: 'kmh', label: 'Max speed' },
+  { value: 119, decimals: 0, unit: 'm', label: 'Distance' },
+  { value: 79, decimals: 0, unit: 'kmh', label: 'Speed' },
+  { value: 18.6, decimals: 1, unit: 'm', label: 'Height' },
+  { value: 9.1, decimals: 1, unit: 's', label: 'Airtime' },
 ];
 
 export function SessionStats({ totalSessions }: { totalSessions: number }) {
@@ -16,17 +17,17 @@ export function SessionStats({ totalSessions }: { totalSessions: number }) {
       <div className="flex items-baseline justify-between mb-4">
         <div className="text-[10px] font-mono tracking-widest uppercase text-primary">Session log</div>
         <div className="text-xs text-muted-foreground font-mono tabular-nums">
-          <AnimatedCounter target={totalSessions} /> sessions logged
+          <AnimatedCounter target={totalSessions} /> logged
         </div>
       </div>
-      <div className="grid grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 gap-x-6 gap-y-3">
         {SESSION_STATS.map((s) => (
-          <div key={s.label}>
-            <div className="text-xl md:text-2xl font-bold tabular-nums leading-none">
+          <div key={s.label} className="flex items-baseline justify-between gap-3">
+            <span className="text-[11px] text-muted-foreground">{s.label}</span>
+            <span className="text-lg font-bold tabular-nums whitespace-nowrap">
               <AnimatedCounter target={s.value} decimals={s.decimals} />
               <span className="text-xs text-muted-foreground font-medium ml-0.5">{s.unit}</span>
-            </div>
-            <div className="text-[10px] text-muted-foreground mt-1.5 leading-tight">{s.label}</div>
+            </span>
           </div>
         ))}
       </div>
