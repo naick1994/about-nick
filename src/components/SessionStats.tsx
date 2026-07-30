@@ -12,7 +12,7 @@ const SESSION_STATS = [
 
 export function SessionStats({ totalSessions }: { totalSessions: number }) {
   return (
-    <div className="group relative rounded-xl border border-border bg-card/70 backdrop-blur px-5 py-4 overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[var(--shadow-hover)]">
+    <div className="group relative h-full flex flex-col rounded-xl border border-border bg-card/70 backdrop-blur px-5 py-4 overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[var(--shadow-hover)]">
       <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
       <div className="flex items-baseline justify-between mb-4">
         <div className="text-[10px] font-mono tracking-widest uppercase text-primary">Session log</div>
@@ -20,7 +20,7 @@ export function SessionStats({ totalSessions }: { totalSessions: number }) {
           <AnimatedCounter target={totalSessions} /> logged
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-x-6 gap-y-3">
+      <div className="grid grid-cols-2 gap-x-6 gap-y-3 flex-1 content-center">
         {SESSION_STATS.map((s) => (
           <div key={s.label} className="flex items-baseline justify-between gap-3">
             <span className="text-[11px] text-muted-foreground whitespace-nowrap">{s.label}</span>
