@@ -37,7 +37,7 @@ function RoleRow({ item, index, isOpen, onToggle }: {
       }}
     >
       <div
-        className="absolute left-0 top-0 bottom-0 w-[3px] bg-primary origin-top scale-y-0 group-hover/row:scale-y-100 transition-transform duration-300"
+        className="absolute -left-4 top-0 bottom-0 w-[3px] bg-primary origin-top scale-y-0 group-hover/row:scale-y-100 transition-transform duration-300"
         aria-hidden="true"
       />
       <div className="absolute inset-0 bg-primary/[0.03] opacity-0 group-hover/row:opacity-100 transition-opacity duration-300 pointer-events-none" aria-hidden="true" />
