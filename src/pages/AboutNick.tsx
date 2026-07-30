@@ -51,13 +51,13 @@ const EXPERIENCE: RoleItem[] = [
   },
   {
     title: 'Chief Operating Officer', org: 'Snowit (Founding Team)', orgUrl: 'https://snowit.ski/en', period: 'May 2019 - Feb 2025 · 5 yrs 10 mos', logo: logoSnowit, era: 'Milan',
-    companyDesc: 'GPS-based mobile application for skiers and snowboarders, designed to track and analyse on-slope performance. The app records distance travelled, elevation, number of runs, average and maximum speed, and calories burned, while allowing users to identify ski runs and visualise their routes on 3D maps. It also includes social and gamification features, such as challenges, rewards, performance comparison and social sharing.',
+    companyDesc: 'Leading travel-tech platform for winter sports, integrating ski passes, equipment rental, lessons, accommodation and other mountain services into a single digital customer journey. Snowit also provides white-label e-commerce solutions for ski resorts and tourism destinations.',
     desc: [
       'Scaled Snowit to 400k+ users and the team from 3 to 50+ people.',
       'Led Product, Ops, and Customer Care teams.',
       'Managed P&L and implemented agile project management tools and routines.',
-      'Led development of a GPS-based ski tracking app.',
       'Defined the new operating model and built the Operations & Product and Customer Care teams; the app holds a 4.8-star rating, credited in part to that work.',
+      'GPS-based mobile application for skiers and snowboarders, designed to track and analyse on-slope performance. The app records distance travelled, elevation, number of runs, average and maximum speed, and calories burned, while allowing users to identify ski runs and visualise their routes on 3D maps. It also includes social and gamification features, such as challenges, rewards, performance comparison and social sharing.',
     ],
   },
   {
@@ -78,6 +78,7 @@ const EXPERIENCE: RoleItem[] = [
   },
   {
     title: 'Consultant', org: 'DGM Consulting Srl', orgUrl: 'https://dgmco.it/it/', period: 'Apr 2018 - Aug 2018 · 5 mos', logo: logoDgm, era: 'Milan',
+    companyDesc: 'Management consulting firm specialising in corporate performance, supporting companies across performance planning, measurement and management. It combines business analysis, forecasting, management control and technology-enabled tools to improve decision-making, operational efficiency and business results.',
     desc: ['Data analytics and strategic consulting in hospitality and industrial sectors.'],
   },
 ];
