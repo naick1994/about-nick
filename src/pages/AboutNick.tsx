@@ -24,8 +24,8 @@ import logoNtuTaiwan from '@/assets/logo-ntu-taiwan.jpg';
 
 const EXPERIENCE: RoleItem[] = [
   {
-    title: 'Founder & Strategic Advisor', org: 'NAICK', period: 'Sep 2026 - Present', logo: logoNaick, era: 'Tarifa',
-    companyDesc: 'NAICK is my independent advisory practice. Hands-on support for founders, scale-ups and sport brands that need to move faster: from strategy to execution, with the operator mindset of someone who has scaled teams and products first-hand.',
+    title: 'Freelance Strategic Advisor', org: 'NAICK', period: 'Sep 2026 - Present', logo: logoNaick, era: 'Tarifa',
+    companyDesc: 'NAICK is the brand behind my freelance advisory work. Hands-on support for founders, scale-ups and sport brands that need to move faster: from strategy to execution, with the operator mindset of someone who has scaled teams and products first-hand.',
     desc: [
       'Growth strategy and go-to-market for startups, scale-ups and sport & outdoor brands.',
       'Digital transformation: operating models, processes, tooling and product organisation.',
@@ -192,8 +192,8 @@ export default function AboutNick() {
             </p>
 
             <p className="text-base text-muted-foreground mb-8 -mt-4">
-              Since September 2026 I also run <span className="font-semibold bg-gradient-to-b from-[#FF9B14] to-[#FD6502] bg-clip-text text-transparent">NAICK</span>,
-              my independent advisory practice, helping founders and companies on strategy, digital transformation and AI adoption.{' '}
+              Since September 2026 I also work as a <span className="text-foreground font-semibold">freelance strategic advisor</span> under
+              the <span className="font-semibold bg-gradient-to-b from-[#FF9B14] to-[#FD6502] bg-clip-text text-transparent">NAICK</span> brand, helping founders and companies on strategy, digital transformation and AI adoption.{' '}
               <a href="#work-together" className="inline-flex items-center gap-1 text-primary font-medium hover:underline">
                 Want to work together? <ArrowDown className="w-3.5 h-3.5" />
               </a>
