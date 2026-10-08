@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" xmlns:c2pa="http://c2pa.org/manifest">
+<defs><linearGradient id="naick-orange" gradientUnits="userSpaceOnUse" x1="40" y1="40" x2="472" y2="472">
+<stop offset="0" stop-color="#FF9B14"/><stop offset="1" stop-color="#FD6502"/></linearGradient></defs>
+<rect width="512" height="512" fill="#000"/>
+<path id="stem-left" fill="#FFF" d="M40 96L152 96L152 442A30 30 0 0 1 122 472L40 472Z"/>
+<path id="stem-right" fill="#FFF" d="M360 70A30 30 0 0 1 390 40L472 40L472 416L360 416Z"/>
+<line id="diagonal" x1="96" y1="96" x2="416" y2="416" stroke="url(#naick-orange)" stroke-width="112" stroke-linecap="round"/>
+</svg>

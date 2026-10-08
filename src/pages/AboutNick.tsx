@@ -9,6 +9,8 @@ import { AnimatedCounter } from '@/components/AnimatedCounter';
 import { RoleList, type RoleItem } from '@/components/RoleList';
 import { useLiveWind } from '@/hooks/useLiveWind';
 import nickAvatar from '@/assets/nick-avatar.jpg';
+import logoNaick from '@/assets/logo-naick.svg';
+import naickWordmark from '@/assets/naick-wordmark.svg';
 import logoFlightMode from '@/assets/logo-flight-mode.jpg';
 import logoCasatiBrothers from '@/assets/logo-casati-brothers.svg';
 import logoRidesk from '@/assets/logo-ridesk.jpg';
@@ -22,8 +24,8 @@ import logoNtuTaiwan from '@/assets/logo-ntu-taiwan.jpg';
 
 const EXPERIENCE: RoleItem[] = [
   {
-    title: 'Freelance Strategic Advisor', org: 'Independent', period: 'Sep 2026 - Present', logo: nickAvatar, era: 'Tarifa',
-    companyDesc: 'Hands-on advisory for founders, scale-ups and sport brands that need to move faster: from strategy to execution, with the operator mindset of someone who has scaled teams and products first-hand.',
+    title: 'Founder & Strategic Advisor', org: 'NAICK', period: 'Sep 2026 - Present', logo: logoNaick, era: 'Tarifa',
+    companyDesc: 'NAICK is my independent advisory practice. Hands-on support for founders, scale-ups and sport brands that need to move faster: from strategy to execution, with the operator mindset of someone who has scaled teams and products first-hand.',
     desc: [
       'Growth strategy and go-to-market for startups, scale-ups and sport & outdoor brands.',
       'Digital transformation: operating models, processes, tooling and product organisation.',
@@ -171,7 +173,7 @@ export default function AboutNick() {
                         <span className="absolute inset-0 rounded-full bg-emerald-500 motion-safe:animate-ping opacity-75" />
                         <span className="relative w-1.5 h-1.5 rounded-full bg-emerald-500" />
                       </span>
-                      Open to advisory
+                      NAICK advisory
                     </Badge>
                   </a>
                 </div>
@@ -190,8 +192,8 @@ export default function AboutNick() {
             </p>
 
             <p className="text-base text-muted-foreground mb-8 -mt-4">
-              Since September 2026 I also work as a <span className="text-foreground font-semibold">freelance strategic advisor</span>,
-              helping founders and companies on strategy, digital transformation and AI adoption.{' '}
+              Since September 2026 I also run <span className="font-semibold bg-gradient-to-b from-[#FF9B14] to-[#FD6502] bg-clip-text text-transparent">NAICK</span>,
+              my independent advisory practice, helping founders and companies on strategy, digital transformation and AI adoption.{' '}
               <a href="#work-together" className="inline-flex items-center gap-1 text-primary font-medium hover:underline">
                 Want to work together? <ArrowDown className="w-3.5 h-3.5" />
               </a>
@@ -257,11 +259,14 @@ export default function AboutNick() {
             </ul>
           </div>
 
-          <div id="work-together" className="scroll-mt-8 relative rounded-xl border border-primary/30 bg-card p-6 md:p-8 overflow-hidden">
-            <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent" aria-hidden="true" />
-            <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-primary/10 blur-3xl pointer-events-none" aria-hidden="true" />
+          <div id="work-together" className="scroll-mt-8 relative rounded-xl border border-[#FD6502]/30 bg-card p-6 md:p-8 overflow-hidden">
+            <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#FD6502] to-transparent" aria-hidden="true" />
+            <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-[#FD6502]/10 blur-3xl pointer-events-none" aria-hidden="true" />
             <div className="relative">
-              <div className="text-xs font-mono tracking-widest uppercase text-primary mb-2">Freelance advisory</div>
+              <div className="flex items-center gap-3 mb-4">
+                <img src={naickWordmark} alt="NAICK" className="h-7 md:h-8 w-auto" />
+                <span className="text-[10px] font-mono tracking-widest uppercase text-[#FF9B14] border-l border-border pl-3">Advisory</span>
+              </div>
               <h2 className="text-2xl md:text-3xl font-black tracking-tight mb-3">Want to work together?</h2>
               <p className="text-sm text-muted-foreground mb-6 max-w-lg">
                 Strategy, digital transformation, AI adoption or a fractional COO for your next growth phase.
