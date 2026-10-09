@@ -165,17 +165,8 @@ export default function AboutNick() {
                 <div className="flex flex-wrap gap-2 mt-2.5">
                   <Badge variant="outline" className="border-primary/40 text-primary text-[11px]">Forbes Under 30</Badge>
                   <Badge variant="outline" className="text-[11px] gap-1">
-                    <MapPin className="w-3 h-3" /> Based in Tarifa
+                    <MapPin className="w-3 h-3" /> Based in Tarifa · Working remotely
                   </Badge>
-                  <a href="#work-together">
-                    <Badge variant="outline" className="text-[11px] gap-1.5 border-emerald-500/40 text-emerald-500 hover:bg-emerald-500/10 transition-colors">
-                      <span className="relative flex w-1.5 h-1.5">
-                        <span className="absolute inset-0 rounded-full bg-emerald-500 motion-safe:animate-ping opacity-75" />
-                        <span className="relative w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                      </span>
-                      NAICK advisory
-                    </Badge>
-                  </a>
                 </div>
               </div>
             </div>
@@ -193,7 +184,7 @@ export default function AboutNick() {
 
             <p className="text-base text-muted-foreground mb-8 -mt-4">
               Since September 2026 I also work as a <span className="text-foreground font-semibold">freelance strategic advisor</span> under
-              the <span className="font-semibold bg-gradient-to-b from-[#FF9B14] to-[#FD6502] bg-clip-text text-transparent">NAICK</span> brand. It's just me: I work one-to-one with founders and companies on strategy, digital transformation and AI adoption.{' '}
+              the <span className="font-semibold bg-gradient-to-b from-[#FF9B14] to-[#FD6502] bg-clip-text text-transparent">NAICK</span> brand. It's just me, working fully remote: I work one-to-one with founders and companies wherever they are, on strategy, digital transformation and AI adoption.{' '}
               <a href="#work-together" className="inline-flex items-center gap-1 text-primary font-medium hover:underline">
                 Want to work together? <ArrowDown className="w-3.5 h-3.5" />
               </a>
@@ -270,7 +261,7 @@ export default function AboutNick() {
               <h2 className="text-2xl md:text-3xl font-black tracking-tight mb-3">Want to work together?</h2>
               <p className="text-sm text-muted-foreground mb-6 max-w-lg">
                 Strategy, digital transformation, AI adoption or a fractional COO for your next growth phase.
-                I work solo, so you deal directly with me from the first call to the last deliverable.
+                I work solo and fully remote, so you deal directly with me from the first call to the last deliverable, wherever you are.
                 Tell me where you are and where you want to go, and let's see if I can help you get there faster.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
