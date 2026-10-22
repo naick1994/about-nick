@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Mail, Phone, MapPin, Briefcase, GraduationCap, MessageCircle, ArrowDown } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import { DeployTag } from '@/components/DeployTag';
 import { WindField } from '@/components/WindField';
 import { WindCompass } from '@/components/WindCompass';
 import { SessionStats } from '@/components/SessionStats';
@@ -43,28 +42,28 @@ const EXPERIENCE: RoleItem[] = [
     ],
   },
   {
-    title: 'Co-Founder & CEO', org: 'Flight Mode', period: 'Mar 2025 - Present · 1 yr 5 mos', logo: logoFlightMode, era: 'Tarifa',
+    title: 'Co-Founder & CEO', org: 'Flight Mode', period: 'Mar 2025 - Present', logo: logoFlightMode, era: 'Tarifa',
     desc: [
       'Objective: innovate and revolutionise the kitesurf industry.',
       'Developing market growth initiatives for the global wind-powered sports ecosystem.',
     ],
   },
   {
-    title: 'Manager', org: 'Casati Brothers', orgUrl: 'https://casatibrothers.com/', period: 'Mar 2025 - Present · 1 yr 5 mos', logo: logoCasatiBrothers, logoScale: 2.1, era: 'Tarifa',
+    title: 'Manager', org: 'Casati Brothers', orgUrl: 'https://casatibrothers.com/', period: 'Mar 2025 - Present', logo: logoCasatiBrothers, logoScale: 2.1, era: 'Tarifa',
     desc: [
       'Athlete representation, sponsorships, partnerships, and strategic growth.',
       'Currently managing two of the most talented riders in the world.',
     ],
   },
   {
-    title: 'Italy and Spain Distributor', org: 'Harlem Kitesurfing', period: 'Mar 2025 - Present · 1 yr 5 mos', logo: logoHarlem, era: 'Tarifa',
+    title: 'Italy and Spain Distributor', org: 'Harlem Kitesurfing', period: 'Mar 2025 - Present', logo: logoHarlem, era: 'Tarifa',
     desc: [
       'Exclusive distribution partner for Harlem in Italy, Spain, and the Canary Islands.',
       'Retail and ambassador strategy, brand positioning.',
     ],
   },
   {
-    title: 'Co-Founder & CEO', org: 'Ridesk', orgUrl: 'https://www.ridesk.app/', period: 'Oct 2025 - Present · 10 mos', logo: logoRidesk, era: 'Tarifa',
+    title: 'Co-Founder & CEO', org: 'Ridesk', orgUrl: 'https://www.ridesk.app/', period: 'Oct 2025 - Present', logo: logoRidesk, era: 'Tarifa',
     desc: [
       'Objective: simplify the watersport school industry through digital innovation.',
       'Building Ridesk, a scalable SaaS platform that helps schools manage bookings, instructors, payments, and daily operations from one all-in-one system.',
@@ -301,7 +300,6 @@ export default function AboutNick() {
           </div>
         </div>
       </div>
-      <DeployTag />
     </div>
   );
 }
