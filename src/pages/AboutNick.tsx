@@ -21,8 +21,17 @@ import logoFnm from '@/assets/logo-fnm.jpg';
 import logoDgm from '@/assets/logo-dgm.jpg';
 import logoBocconi from '@/assets/logo-bocconi.jpg';
 import logoNtuTaiwan from '@/assets/logo-ntu-taiwan.jpg';
+import logoWoo from '@/assets/logo-woo.svg';
 
 const EXPERIENCE: RoleItem[] = [
+  {
+    title: 'Product Advisor', org: 'WOO Sports', orgUrl: 'https://woosports.com/', period: 'Oct 2026 - Present', logo: logoWoo, era: 'Tarifa',
+    companyDesc: 'WOO builds the sensor and app that track kiteboarding performance, measuring jumps, height, airtime and landings. It is the reference data tool for riders and competitions worldwide.',
+    desc: [
+      'Product advisor to the WOO team, working on one focus area of the product at a time.',
+      'Bringing the rider, coach and competition perspective into what WOO builds next.',
+    ],
+  },
   {
     title: 'Freelance Strategic Advisor', org: 'NAICK (freelance, independent)', period: 'Sep 2026 - Present', logo: logoNaick, era: 'Tarifa',
     companyDesc: 'NAICK is simply the name I work under as a freelance advisor. No agency, no team, no juniors: every project is run by me personally, end to end. Hands-on support for founders, scale-ups and sport brands that need to move faster, from strategy to execution, with the operator mindset of someone who has scaled teams and products first-hand.',
