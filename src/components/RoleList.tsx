@@ -32,8 +32,7 @@ function RoleRow({ item, index, isOpen, onToggle }: {
       className="relative border-b border-border last:border-b-0 group/row"
       style={{
         opacity: seen ? 1 : 0,
-        transform: seen ? 'translateX(0)' : 'translateX(-16px)',
-        transition: `opacity 0.5s ease ${index * 60}ms, transform 0.5s ease ${index * 60}ms`,
+        transition: `opacity 0.4s ease ${Math.min(index, 6) * 40}ms`,
       }}
     >
       <div
@@ -44,10 +43,10 @@ function RoleRow({ item, index, isOpen, onToggle }: {
       <button
         onClick={onToggle}
         aria-expanded={isOpen}
-        className="relative w-full flex items-center gap-4 py-4 pl-4 -ml-4 pr-2 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-lg"
+        className="relative w-full flex items-center gap-4 py-4 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background rounded-lg"
       >
         {item.logo ? (
-          <div className="w-11 h-11 rounded-lg overflow-hidden shrink-0 flex items-center justify-center bg-card border border-border transition-transform duration-300 group-hover/row:scale-110">
+          <div className="w-10 h-10 rounded-md overflow-hidden shrink-0 flex items-center justify-center bg-white ring-1 ring-border">
             <img
               src={item.logo}
               alt={`${item.org} logo`}
@@ -56,21 +55,17 @@ function RoleRow({ item, index, isOpen, onToggle }: {
             />
           </div>
         ) : (
-          <div className="w-11 h-11 rounded-lg shrink-0 bg-card border border-border" />
+          <div className="w-10 h-10 rounded-md shrink-0 bg-white ring-1 ring-border" />
         )}
 
         <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-2">
-            <span className="font-bold text-[15px] transition-colors duration-200 group-hover/row:text-primary">{item.title}</span>
-            <span className="text-[9px] font-mono tracking-widest uppercase text-primary/80 border border-primary/30 rounded-full px-1.5 py-0.5 shrink-0">
-              {item.era}
-            </span>
-          </div>
+          <div className="font-medium text-[15px] transition-colors group-hover/row:text-primary">{item.title}</div>
           <div className="text-sm text-muted-foreground truncate">{item.org}</div>
         </div>
 
-        <div className="text-[11px] text-muted-foreground/70 font-mono tabular-nums shrink-0 hidden sm:block">
-          {item.period}
+        <div className="text-right text-xs text-muted-foreground tabular-nums shrink-0 hidden sm:block">
+          <div>{item.period}</div>
+          <div className="mt-0.5 opacity-70">{item.era}</div>
         </div>
         <ChevronDown
           className="w-4 h-4 text-muted-foreground shrink-0 transition-transform duration-300"
@@ -87,27 +82,27 @@ function RoleRow({ item, index, isOpen, onToggle }: {
             transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             className="relative overflow-hidden"
           >
-            <div className="pl-[60px] pb-4 -mt-1">
-              <div className="text-[11px] text-muted-foreground/70 font-mono tabular-nums mb-2 sm:hidden">
-                {item.period}
+            <div className="pl-14 pb-5 -mt-1">
+              <div className="text-xs text-muted-foreground tabular-nums mb-2 sm:hidden">
+                {item.period} · {item.era}
               </div>
               {item.orgUrl && (
                 <a
                   href={item.orgUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-primary hover:underline underline-offset-2 mb-2 inline-block"
+                  className="text-xs text-muted-foreground underline underline-offset-4 decoration-border hover:text-foreground mb-2 inline-block"
                 >
                   {item.orgUrl.replace(/^https?:\/\//, '')}
                 </a>
               )}
               {item.companyDesc && (
-                <p className="text-sm text-muted-foreground/80 italic mb-3 pb-3 border-b border-border/60">
+                <p className="text-sm text-muted-foreground mb-3 pb-3 border-b border-border/60">
                   {item.companyDesc}
                 </p>
               )}
               {item.desc.length > 0 && (
-                <ul className="text-sm text-muted-foreground space-y-1.5 list-disc list-inside">
+                <ul className="text-sm text-foreground/80 space-y-1.5 list-disc pl-4 marker:text-muted-foreground">
                   {item.desc.map((line) => <li key={line}>{line}</li>)}
                 </ul>
               )}
@@ -127,7 +122,6 @@ export function RoleList({ items }: { items: RoleItem[] }) {
 
   return (
     <div className="relative border-t border-border">
-      <div className="absolute -left-4 top-0 bottom-0 w-px bg-gradient-to-b from-primary/25 via-border to-transparent" aria-hidden="true" />
       {items.map((item, i) => {
         const key = item.title + item.org;
         return (

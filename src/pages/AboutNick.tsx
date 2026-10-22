@@ -1,10 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Mail, Phone, MapPin, Briefcase, GraduationCap, MessageCircle, ArrowDown } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
-import { WindField } from '@/components/WindField';
+import { Mail, MapPin, MessageCircle } from 'lucide-react';
 import { WindCompass } from '@/components/WindCompass';
 import { SessionStats } from '@/components/SessionStats';
-import { AnimatedCounter } from '@/components/AnimatedCounter';
 import { RoleList, type RoleItem } from '@/components/RoleList';
 import { useLiveWind } from '@/hooks/useLiveWind';
 import nickAvatar from '@/assets/nick-avatar.jpg';
@@ -140,166 +137,144 @@ export default function AboutNick() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div className="relative overflow-hidden border-b border-border">
-        {wind.status === 'ready' && (
-          <WindField speedKn={wind.data.speedKn} directionDeg={wind.data.directionDeg} />
-        )}
+      <header className="container mx-auto px-5 pt-20 pb-16 max-w-2xl">
         <div
-          className="absolute inset-x-0 top-0 h-96 bg-gradient-to-b from-primary/10 via-transparent to-transparent pointer-events-none"
-          aria-hidden="true"
-        />
-
-        <div className="container mx-auto px-4 pt-16 pb-14 max-w-2xl relative">
-          <div
-            style={{
-              opacity: heroIn ? 1 : 0,
-              transform: heroIn ? 'translateY(0)' : 'translateY(14px)',
-              transition: 'opacity 0.6s ease, transform 0.6s ease',
-            }}
-          >
-            <div className="flex items-center gap-5 mb-6">
-              <div className="relative shrink-0">
-                <div className="absolute -inset-2 rounded-full bg-primary/20 blur-xl motion-safe:animate-pulse" aria-hidden="true" />
-                <img
-                  src={nickAvatar}
-                  alt="Nicholas Baruffaldi"
-                  className="relative w-24 h-24 rounded-full object-cover border-2 border-primary/40 shadow-[0_0_30px_-8px_hsl(var(--primary)/0.5)]"
-                />
-              </div>
-              <div>
-                <h1 className="text-4xl md:text-5xl font-black tracking-tight bg-gradient-to-br from-foreground via-foreground to-primary bg-clip-text text-transparent">
-                  Nicholas Baruffaldi
-                </h1>
-                <div className="flex flex-wrap gap-2 mt-2.5">
-                  <Badge variant="outline" className="border-primary/40 text-primary text-[11px]">Forbes Under 30</Badge>
-                  <Badge variant="outline" className="text-[11px] gap-1">
-                    <MapPin className="w-3 h-3" /> Based in Tarifa · Working remotely
-                  </Badge>
-                </div>
-              </div>
-            </div>
-
-            <p className="text-lg text-muted-foreground mb-8">
-              I'm a digital enthusiast and sport lover born and raised in the Italian Alps, with the dream of
-              transforming the competitive sport arena into something bigger than performance. Today I'm CEO
-              &amp; Co-founder of Flight Mode, official Harlem Kitesurfing distributor for Italy and Spain,
-              and manager of pro athletes Lorenzo and Leonardo Casati, two of the most iconic talents in
-              international kitesurfing. Previously C-level
-              executive in scale-ups, I bring a hybrid mindset blending business, brand building and athlete
-              development. Selected in Forbes Under 30, I believe in clarity, bold execution and authentic
-              stories. As an avid believer in optimisation, I follow the motto: "done is better than perfect."
-            </p>
-
-            <p className="text-base text-muted-foreground mb-8 -mt-4">
-              Since September 2026 I also work as a <span className="text-foreground font-semibold">freelance strategic advisor</span> under
-              the <span className="font-semibold bg-gradient-to-b from-[#FF9B14] to-[#FD6502] bg-clip-text text-transparent">NAICK</span> brand. It's just me, working fully remote: I work one-to-one with founders and companies wherever they are, on strategy, digital transformation and AI adoption.{' '}
-              <a href="#work-together" className="inline-flex items-center gap-1 text-primary font-medium hover:underline">
-                Want to work together? <ArrowDown className="w-3.5 h-3.5" />
-              </a>
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-              {wind.status === 'ready' && (
-                <WindCompass
-                  directionDeg={wind.data.directionDeg}
-                  speedKn={wind.data.speedKn}
-                  gustsKn={wind.data.gustsKn}
-                  temperatureC={wind.data.temperatureC}
-                />
-              )}
-              <SessionStats totalSessions={377} />
-            </div>
-
-            <div className="grid grid-cols-3 gap-4">
-              <div className="group relative rounded-lg border border-border bg-card p-4 text-center overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[var(--shadow-hover)]">
-                <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
-                <div className="text-2xl md:text-3xl font-bold text-primary">
-                  <AnimatedCounter target={50} suffix="+" />
-                </div>
-                <div className="text-[11px] text-muted-foreground mt-1 leading-tight">Team scaled from 3, as founding COO</div>
-              </div>
-              <div className="group relative rounded-lg border border-border bg-card p-4 text-center overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[var(--shadow-hover)]">
-                <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
-                <div className="text-2xl md:text-3xl font-bold text-primary">
-                  <AnimatedCounter target={2} />
-                </div>
-                <div className="text-[11px] text-muted-foreground mt-1 leading-tight">World Champion riders managed: Lorenzo & Leonardo Casati</div>
-              </div>
-              <div className="group relative rounded-lg border border-border bg-card p-4 text-center overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[var(--shadow-hover)]">
-                <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
-                <div className="text-2xl md:text-3xl font-bold text-primary">
-                  <AnimatedCounter target={110} suffix="/110" />
-                </div>
-                <div className="text-[11px] text-muted-foreground mt-1 leading-tight">Bocconi MSc in Management</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="container mx-auto px-4 py-14 max-w-2xl">
-        <div className="flex items-center gap-2 mb-5">
-          <Briefcase className="w-4 h-4 text-primary" />
-          <h2 className="text-xs font-mono tracking-widest uppercase text-primary">Experience</h2>
-        </div>
-        <RoleList items={EXPERIENCE} />
-
-        <div className="flex items-center gap-2 mb-5 mt-14">
-          <GraduationCap className="w-4 h-4 text-primary" />
-          <h2 className="text-xs font-mono tracking-widest uppercase text-primary">Education</h2>
-        </div>
-        <RoleList items={EDUCATION} />
-
-        <div className="space-y-10 mt-16">
-          <div>
-            <h2 className="font-bold mb-3">Languages</h2>
-            <ul className="space-y-1.5 text-sm text-muted-foreground">
-              {LANGUAGES.map((l) => <li key={l.text}>{l.flag} {l.text}</li>)}
-            </ul>
-          </div>
-
-          <div id="work-together" className="scroll-mt-8 relative rounded-xl border border-[#FD6502]/30 bg-card p-6 md:p-8 overflow-hidden">
-            <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#FD6502] to-transparent" aria-hidden="true" />
-            <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-[#FD6502]/10 blur-3xl pointer-events-none" aria-hidden="true" />
-            <div className="relative">
-              <div className="flex items-center gap-3 mb-4">
-                <img src={naickWordmark} alt="NAICK" className="h-7 md:h-8 w-auto" />
-                <span className="text-[10px] font-mono tracking-widest uppercase text-[#FF9B14] border-l border-border pl-3">Freelance advisor</span>
-              </div>
-              <h2 className="text-2xl md:text-3xl font-black tracking-tight mb-3">Want to work together?</h2>
-              <p className="text-sm text-muted-foreground mb-6 max-w-lg">
-                Strategy, digital transformation, AI adoption or a fractional COO for your next growth phase.
-                I work solo and fully remote, so you deal directly with me from the first call to the last deliverable, wherever you are.
-                Tell me where you are and where you want to go, and let's see if I can help you get there faster.
+          style={{
+            opacity: heroIn ? 1 : 0,
+            transition: 'opacity 0.5s ease',
+          }}
+        >
+          <div className="flex items-center gap-5 mb-10">
+            <img
+              src={nickAvatar}
+              alt="Nicholas Baruffaldi"
+              className="w-20 h-20 rounded-full object-cover shrink-0 ring-2 ring-primary/70 ring-offset-4 ring-offset-background"
+            />
+            <div className="min-w-0">
+              <h1 className="font-serif text-4xl md:text-5xl font-normal tracking-tight leading-tight">
+                Nicholas Baruffaldi
+              </h1>
+              <p className="mt-1.5 text-sm text-muted-foreground flex flex-wrap items-center gap-x-2 gap-y-1">
+                <span>Forbes Under 30</span>
+                <span aria-hidden="true">·</span>
+                <span className="inline-flex items-center gap-1"><MapPin className="w-3.5 h-3.5" /> Based in Tarifa · Working remotely</span>
               </p>
-              <div className="flex flex-col sm:flex-row gap-3">
-                <a
-                  href="https://wa.me/393483409712?text=Hi%20Nicholas%2C%20I%27d%20like%20to%20talk%20about%20working%20together."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-[#25D366] px-5 py-3 text-sm font-semibold text-white shadow-sm transition-transform hover:-translate-y-0.5 hover:brightness-105"
-                >
-                  <MessageCircle className="w-4 h-4" /> Message me on WhatsApp
-                </a>
-                <a
-                  href="mailto:nicholas.baruffaldi@gmail.com?subject=Let's%20work%20together"
-                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground transition-transform hover:-translate-y-0.5 hover:border-primary/50"
-                >
-                  <Mail className="w-4 h-4" /> Send me an email
-                </a>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-x-6 gap-y-1.5 mt-5 text-xs text-muted-foreground">
-                <a href="mailto:nicholas.baruffaldi@gmail.com" className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors">
-                  <Mail className="w-3.5 h-3.5" /> nicholas.baruffaldi@gmail.com
-                </a>
-                <a href="tel:+393483409712" className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors">
-                  <Phone className="w-3.5 h-3.5" /> +39 348 3409712
-                </a>
-              </div>
             </div>
           </div>
+
+          <p className="text-[17px] leading-relaxed text-foreground/85 mb-6">
+            I'm a digital enthusiast and sport lover born and raised in the Italian Alps, with the dream of
+            transforming the competitive sport arena into something bigger than performance. Today I'm CEO
+            &amp; Co-founder of Flight Mode, official Harlem Kitesurfing distributor for Italy and Spain,
+            and manager of pro athletes Lorenzo and Leonardo Casati, two of the most iconic talents in
+            international kitesurfing. Previously C-level
+            executive in scale-ups, I bring a hybrid mindset blending business, brand building and athlete
+            development. Selected in Forbes Under 30, I believe in clarity, bold execution and authentic
+            stories. As an avid believer in optimisation, I follow the motto: "done is better than perfect."
+          </p>
+
+          <p className="text-[17px] leading-relaxed text-foreground/85">
+            Since September 2026 I also work as a <span className="text-foreground font-medium">freelance strategic advisor</span> under
+            the <span className="font-semibold text-[#FD6502]">NAICK</span> brand. It's just me, working fully remote: I work one-to-one with founders and companies wherever they are, on strategy, digital transformation and AI adoption.{' '}
+            <a href="#work-together" className="text-primary font-medium underline underline-offset-4 decoration-primary/40 hover:decoration-primary transition-colors">
+              Want to work together?
+            </a>
+          </p>
+
+          <dl className="grid grid-cols-3 mt-12 border-y border-border divide-x divide-border">
+            {[
+              { value: '50+', label: 'Team scaled from 3, as founding COO' },
+              { value: '2', label: 'World Champion riders managed: Lorenzo & Leonardo Casati' },
+              { value: '110/110', label: 'Bocconi MSc in Management' },
+            ].map((stat) => (
+              <div key={stat.value} className="py-5 px-3 first:pl-0 sm:px-5">
+                <dt className="sr-only">{stat.label}</dt>
+                <dd className="font-serif text-3xl md:text-4xl tabular-nums text-primary">{stat.value}</dd>
+                <dd className="text-xs text-muted-foreground mt-1.5 leading-snug">{stat.label}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
-      </div>
+      </header>
+
+      <main className="container mx-auto px-5 pb-16 max-w-2xl">
+        <section>
+          <h2 className="font-serif text-2xl mb-4 flex items-center gap-3"><span className="w-1.5 h-6 rounded-full bg-primary" aria-hidden="true" />Experience</h2>
+          <RoleList items={EXPERIENCE} />
+        </section>
+
+        <section className="mt-16">
+          <h2 className="font-serif text-2xl mb-4 flex items-center gap-3"><span className="w-1.5 h-6 rounded-full bg-primary" aria-hidden="true" />Education</h2>
+          <RoleList items={EDUCATION} />
+        </section>
+
+        <section className="mt-16">
+          <h2 className="font-serif text-2xl mb-4 flex items-center gap-3"><span className="w-1.5 h-6 rounded-full bg-primary" aria-hidden="true" />Languages</h2>
+          <ul className="divide-y divide-border border-y border-border text-sm">
+            {LANGUAGES.map((l) => {
+              const [lang, level] = l.text.split(': ');
+              return (
+                <li key={l.text} className="flex justify-between gap-4 py-3">
+                  <span>{lang}</span>
+                  <span className="text-muted-foreground text-right">{level}</span>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+
+        <section className="mt-16">
+          <h2 className="font-serif text-2xl mb-4 flex items-center gap-3"><span className="w-1.5 h-6 rounded-full bg-primary" aria-hidden="true" />On the water</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {wind.status === 'ready' && (
+              <WindCompass
+                directionDeg={wind.data.directionDeg}
+                speedKn={wind.data.speedKn}
+                gustsKn={wind.data.gustsKn}
+                temperatureC={wind.data.temperatureC}
+              />
+            )}
+            <SessionStats totalSessions={377} />
+          </div>
+        </section>
+
+        <section id="work-together" className="scroll-mt-8 mt-20 rounded-xl border border-[#FD6502]/30 bg-[#FD6502]/[0.04] p-6 md:p-10">
+          <div className="flex items-center gap-3 mb-5">
+            <img src={naickWordmark} alt="NAICK" className="h-6 w-auto" />
+            <span className="text-xs text-[#FF9B14] border-l border-border pl-3">Freelance advisor</span>
+          </div>
+          <h2 className="font-serif text-3xl md:text-4xl mb-4">Want to work together?</h2>
+          <p className="text-[17px] leading-relaxed text-foreground/85 mb-8 max-w-xl">
+            Strategy, digital transformation, AI adoption or a fractional COO for your next growth phase.
+            I work solo and fully remote, so you deal directly with me from the first call to the last deliverable, wherever you are.
+            Tell me where you are and where you want to go, and let's see if I can help you get there faster.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <a
+              href="mailto:nicholas.baruffaldi@gmail.com?subject=Let's%20work%20together"
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-gradient-to-b from-[#FF9B14] to-[#FD6502] px-5 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+            >
+              <Mail className="w-4 h-4" /> Send me an email
+            </a>
+            <a
+              href="https://wa.me/393483409712?text=Hi%20Nicholas%2C%20I%27d%20like%20to%20talk%20about%20working%20together."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-md border border-border px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-card"
+            >
+              <MessageCircle className="w-4 h-4" /> Message me on WhatsApp
+            </a>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-x-6 gap-y-1.5 mt-6 text-sm text-muted-foreground">
+            <a href="mailto:nicholas.baruffaldi@gmail.com" className="hover:text-foreground transition-colors">
+              nicholas.baruffaldi@gmail.com
+            </a>
+            <a href="tel:+393483409712" className="hover:text-foreground transition-colors">
+              +39 348 3409712
+            </a>
+          </div>
+        </section>
+      </main>
     </div>
   );
 }
