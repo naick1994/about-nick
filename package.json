@@ -9,7 +9,7 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "postbuild": "mkdir -p dist/about-nick && cp dist/index.html dist/about-nick/index.html"
+    "postbuild": "cp dist/index.html dist/about-nick.html"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
